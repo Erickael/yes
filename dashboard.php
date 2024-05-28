@@ -1,17 +1,5 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Simplified authentication for demo purposes
-    if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
-        $_SESSION['loggedin'] = true;
-    } else {
-        header('Location: index.php');
-        exit;
-    }
-} else if (!isset($_SESSION['loggedin'])) {
-    header('Location: index.php');
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div id="sidebar" class="bg-light border-right">
             <div class="sidebar-heading">Menu</div>
             <div class="list-group list-group-flush">
-                <a href="?section=dashboard" class="list-group-item list-group-item-action">Tableau de Bord</a>
+                <a href="?section=dashboard" class="list-group-item list-group-item-action">Accueil</a>
                 <a href="?section=retrait" class="list-group-item list-group-item-action">Retrait</a>
                 <a href="?section=versement" class="list-group-item list-group-item-action">Versement</a>
                 <a href="?section=transfert" class="list-group-item list-group-item-action">Transfert</a>
